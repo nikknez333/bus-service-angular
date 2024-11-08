@@ -1,0 +1,118 @@
+/*hero content container -> put text and image next to each other*/
+.hero{
+    display: flex;
+    width: 100%;
+    height: inherit;
+    align-items: center;
+    padding: 2.5rem;
+}
+
+/*hero text container -> put title, subtitle, description and buttons one after another in column direction on defined positions, alignment and with defined gap in between them*/
+.hero__text{
+    position: relative;
+    left: 5rem;
+    top: -1rem;
+    padding-top: 7rem;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 80vh;
+    justify-content: center;
+    text-align: left;
+    gap: 1.1rem;
+}
+
+/*hero title part -> capitalize every word, set its font size/boldness, letter spacing..*/
+.hero__title{
+    text-transform: capitalize;
+    font-weight: 950;
+    font-size: var(--size-6xl);
+    letter-spacing: -0.03em;
+}
+
+/*hero subtitle part -> capitalize every word, set its font size/boldness, letter spacing..*/
+.hero__subtitle{
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: var(--size-3xl);
+    color: var(--clr-light-blue);
+    letter-spacing: -0.02em;
+}
+
+/*hero description part -> set its font size, and maximum width of the paragraph*/
+.hero__desc{
+    font-size: var(--size-base);
+    max-width: 35vw;
+}
+
+/*hero links container -> set layout of buttons to be next to each other, set height and width of button container and align them centrally*/
+.hero__links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    height: var(--size-7xl);
+    margin-top: var(--size-8xl);
+}
+
+/*hero links anchor(individual link) -> set style of anchor link as button,
+ setup initial styles that will impact hover state(initial background, letter color, ensure that content stays on top of transition effect)*/
+.hero__links a{
+    display: inline-flex;
+    position: relative;
+    border: 2px solid var(--clr-light-blue);
+    font-size: var(--size-xl);
+    font-weight: 600;
+    border-radius: var(--size-xl);
+    padding: 0.8rem 1.2rem;
+    background: var(--clr-light-blue);
+    color:#07071d;;
+    letter-spacing: 0.06rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/*hero links(for 2nd individual link) -> every setting from hero__links a apply, but also ensure that initial background and color of letter
+are properly set up for transition effect*/
+.hero__links a:last-child{
+    background: transparent;
+    color: var(--clr-light-blue);
+}
+
+/*hero__links anchor(individual link)::before -> set up "content" background transition effect, its position,
+ make sure transition effect is underneath anchor letter(z-index)*/
+.hero__links a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 0;
+    background: #07071d;
+    color: var(--clr-light-blue);
+    transition: .5s;
+}
+
+/*hero__links anchor(individual link):hover::before -> after hovering the "button" make sure "content" defined with ::before psuedo-element,
+transition to full width of "button"*/ 
+.hero__links a:hover::before{
+    width: 100%;
+}
+
+/*hero__links anchor(individual link):last-child(2nd link)::before -> same styles defined in the previous css ruleset apply,
+but also background and letter color are set for 2nd link, because it has different color*/
+.hero__links a:last-child::before{
+    background: var(--clr-light-blue);
+    color: #07071d;
+}
+
+/*hero__links anchor(individual links):hover -> after hovering 1st "button" ensure color of letters are set with color*/
+.hero__links a:hover{
+    color: var(--clr-light-blue);
+}
+
+/*hero__links anchor(individual links):last-child(2nd link):hover -> after hovering 2nd "button" ensure color of letters are set with color*/
+.hero__links a:last-child:hover{
+    color: #07071d;
+}

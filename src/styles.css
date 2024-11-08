@@ -1,6 +1,42 @@
-/* color & size variables */ 
+/* font styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/apercu-pro');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+/* variables */ 
 :root{
- --clr-background: #0000;
+    /* colors */
+    --clr-dark: #0B0C10;
+    --clr-dark-2: #333;
+    --clr-dark-light: #1F2833;
+    --clr-light-cyan: #1c61f8;
+    --clr-light-blue: #37c0ff;
+    --clr-light-rose: #e11d48;
+    --clr-light-theme: #E9E9E9;
+    --clr-light-background: #ffffff;
+    --clr-light-gold: #fada15;
+    --clr-light-green: #6fff02;
+
+    /*Background radial gradient color */
+    --clr-bg: radial-gradient(142% 91% at 83% 7%, rgb(9, 12, 29) 1%, #ff000000 99%),
+    radial-gradient(142% 91% at 152% 84%, rgb(0, 45, 143) 0%, #070415FF 100%);
+
+    /* sizes */
+    --size-xxs: 0.5rem;
+    --size-xs: 0.75rem;
+    --size-sm: 0.875rem;
+    --size-base: 1rem;
+    --size-lg: 1.1125rem;
+    --size-xl: 1.25rem;
+    --size-2xl: 1.5rem;
+    --size-3xl: 1.875rem;
+    --size-4xl: 2.25rem;
+    --size-5xl: 3rem;
+    --size-6xl: 3.75rem;
+    --size-7xl: 4.5rem;
+    --size-8xl: 6rem;
+    --size-9xl: 8rem;
+    --size-10xl: 10rem;
 }
 
 /* global reset of default browser styles */
@@ -20,13 +56,46 @@ html{
     scroll-behavior: smooth;
 }
 
+/*default content(body) styles*/
+body{
+    background: var(--clr-bg);
+    min-height: 100vh;
+    color: var(--clr-light-theme);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+/*scrollbar styles*/
+body::-webkit-scrollbar{
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track{
+    background: var(--clr-dark);
+}
+
+body::-webkit-scrollbar-thumb{
+    background: var(--clr-light-rose);
+}
+
+
+/*default replaced elements styles*/
 img,
 picture,
 video,
 canvas,
 svg{
     display: block;
+    max-width: 100%;
+    user-select: none;
 }
+
+/*default link styles*/
+a{
+    text-decoration: none;
+    color: white;
+}
+/* utility classes */
 
 .container{
     width: 100%;
@@ -34,5 +103,9 @@ svg{
     margin-right: auto;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+}
+
+.section-gap{
+    margin-top: 5rem;
 }
 

@@ -10,13 +10,17 @@ import { TopHeaderComponent } from './header/top-header/top-header.component';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faUser} from '@fortawesome/free-solid-svg-icons';
 import { faTwitter} from '@fortawesome/free-brands-svg-icons';
+import { MainComponent } from './main/main.component';
+import { HeroComponent } from './main/hero/hero.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     NavbarComponent,
-    TopHeaderComponent
+    TopHeaderComponent,
+    MainComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,
