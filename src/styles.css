@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.cdnfonts.com/css/apercu-pro');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 /* variables */ 
 :root{
@@ -16,10 +19,16 @@
     --clr-light-background: #ffffff;
     --clr-light-gold: #fada15;
     --clr-light-green: #6fff02;
+    --clr-purple-pink: #e594fb;
 
     /*Background radial gradient color */
     --clr-bg: radial-gradient(142% 91% at 83% 7%, rgb(9, 12, 29) 1%, #ff000000 99%),
     radial-gradient(142% 91% at 152% 84%, rgb(0, 45, 143) 0%, #070415FF 100%);
+
+    /*animation var*/
+    --start-x: 200px; /* Starting horizontal position */
+    --end-x: 0px;     /* Final horizontal position */
+    --oscillation: 0.5px;
 
     /* sizes */
     --size-xxs: 0.5rem;
@@ -58,11 +67,12 @@ html{
 
 /*default content(body) styles*/
 body{
-    background: var(--clr-bg);
+    background-image: var(--clr-bg);
     min-height: 100vh;
     color: var(--clr-light-theme);
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    
 }
 
 /*scrollbar styles*/
@@ -98,7 +108,7 @@ a{
 /* utility classes */
 
 .container{
-    width: 100%;
+    width: 1536px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 0.5rem;

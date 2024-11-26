@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faHouse, faCalendarDays, faTicket, faRoad } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-navbar',

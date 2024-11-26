@@ -2,22 +2,25 @@
 .hero{
     display: flex;
     width: 100%;
-    height: inherit;
+    height: 100%;
     align-items: center;
     padding: 2.5rem;
+    overflow: hidden;
 }
 
 /*hero text container -> put title, subtitle, description and buttons one after another in column direction on defined positions, alignment and with defined gap in between them*/
 .hero__text{
     position: relative;
-    left: 5rem;
-    top: -1rem;
-    padding-top: 7rem;
+    margin-left: 5rem;
+    left: 0;
+    top: 0;
+    padding-top: 10rem;
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 40%;
     height: 80vh;
     justify-content: center;
+    align-items: left;
     text-align: left;
     gap: 1.1rem;
 }
@@ -26,7 +29,7 @@
 .hero__title{
     text-transform: capitalize;
     font-weight: 950;
-    font-size: var(--size-6xl);
+    font-size: var(--size-7xl);
     letter-spacing: -0.03em;
 }
 
@@ -34,15 +37,15 @@
 .hero__subtitle{
     text-transform: capitalize;
     font-weight: 600;
-    font-size: var(--size-3xl);
+    font-size: var(--size-4xl);
     color: var(--clr-light-blue);
     letter-spacing: -0.02em;
 }
 
 /*hero description part -> set its font size, and maximum width of the paragraph*/
 .hero__desc{
-    font-size: var(--size-base);
-    max-width: 35vw;
+    font-size: var(--size-lg);
+    max-width: 80%;
 }
 
 /*hero links container -> set layout of buttons to be next to each other, set height and width of button container and align them centrally*/
@@ -50,9 +53,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 40%;
+    width: 50%;
     height: var(--size-7xl);
-    margin-top: var(--size-8xl);
+    margin-top: var(--size-3xl);
 }
 
 /*hero links anchor(individual link) -> set style of anchor link as button,
@@ -115,4 +118,210 @@ but also background and letter color are set for 2nd link, because it has differ
 /*hero__links anchor(individual links):last-child(2nd link):hover -> after hovering 2nd "button" ensure color of letters are set with color*/
 .hero__links a:last-child:hover{
     color: #07071d;
+}
+
+.hero__socialIcons{
+   margin-top: auto;
+   display: flex;
+   justify-content: space-between;
+   width: 180px;
+}
+
+.hero__socialIcons a{
+    position: relative;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background: transparent;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero__socialIcons a.fb{
+    background:#0266ff;
+}
+
+.hero__socialIcons a.yt{
+    background: #ff0000;
+}
+
+.hero__socialIcons a.tw{
+    background: #1da1f2;
+}
+
+.hero__socialIcons a:hover{
+    color: #07071d;
+    scale: 1.5;
+    transition: 0.2s ease;
+}
+
+.hero__socialIcons a:hover fa-icon.facebook{
+    color:#0266ff;
+}
+
+.hero__socialIcons a:hover fa-icon.youtube{
+    color:#ff0000;
+}
+
+.hero__socialIcons a:hover fa-icon.twitter{
+    color: #1da1f2;
+}
+
+.hero__socialIcons a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 0;
+    background: white;
+    transition: .5s;
+    z-index: -1;
+}
+
+.hero__socialIcons a::after{
+    content: '';
+    position: absolute;
+    right: 50%;
+    height: 100%;
+    width: 0;
+    background: white;
+    transition: .5s;
+    z-index: -1;
+}
+
+.hero__socialIcons a:hover::before, .hero__socialIcons a:hover::after{
+    width: 50%;
+}
+
+.hero__images{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60%;
+    height: 80vh;
+}
+
+.moon{
+    position: relative;
+    top: 0px;
+    width: 200px;
+    left: 150px;
+    z-index: -2;
+    opacity: 0.9;
+}
+
+.gps{
+    position: relative;
+    top: 150px;
+    left: 0px;
+    z-index: -2;
+    opacity: 0.8;
+}
+
+.city{
+    position: relative;
+    top: 70px;
+    left: 0;
+    z-index: -2;
+    opacity: 0.9;
+}
+
+.hero__foreground{
+    position: relative;
+    top: -45%;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+.bus2{
+    position: absolute;
+    top: 155px;
+    left: 720px;
+    z-index: 2;
+    filter: drop-shadow(5px 1px 2px black);
+    opacity: 1;
+}
+
+.girl{
+    position: absolute;
+    top: 217px;
+    left: 600px;
+    z-index: 1;
+    filter: drop-shadow(2px 0px 2px black);
+    opacity: 1;
+}
+
+.man{
+    position: absolute;
+    top: 203px;
+    left: 400px;
+    z-index: 1;
+    filter: drop-shadow(2px 0px 2px black);
+    opacity: 1;
+}
+
+
+/* animation utility classes */
+
+.animate{
+    animation-duration: 1.5s;
+}
+
+/* double utility class ensures that animate__slow, animate__fast, animate__infinite and animate__delay_1s
+could only work if .animate class exists in same element */
+.animate.animate__slow{
+    animation-duration: 3s;
+}
+
+.animate.animate__fast{
+    animation-duration: 0.5s;
+}
+
+.animate.animate__infinite{
+    animation-iteration-count: infinite;
+}
+
+.animate.animate__delay_1s{
+    animation-delay: 1s;
+}
+
+/* animations */
+@keyframes arriveFromTop {
+    0% {
+      transform: translateY(-150px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+
+.arriveFromTop{
+    animation-name: arriveFromTop;
+    animation-timing-function: ease-out;
+}
+  
+@keyframes moveBus {
+    0% {
+      transform: translate(var(--start-x), 0);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(var(--end-x), 0);
+      opacity: 1;
+    }
+}
+
+  
+.moveBus {
+    animation-name: moveBus;
+    animation-timing-function: ease-out;
 }

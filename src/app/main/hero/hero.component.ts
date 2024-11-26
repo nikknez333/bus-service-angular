@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {faFacebook, faTwitter, faYoutube} from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'hero-section',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './hero.component.css'
 })
 export class HeroComponent {
-
+  faFacebook = faFacebook;
+  faTwitter = faTwitter;
+  faYoutube = faYoutube;
 }

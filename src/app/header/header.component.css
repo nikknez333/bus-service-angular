@@ -2,21 +2,78 @@
     /*position: fixed;
     top: 0;
     left: 0;*/
+    position:relative;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
+    height: auto;
     gap: 3em;
     padding: 0.7rem;
     background-color: transparent;
+    opacity: 1;
+    transition: background-color 0.8s ease-out;
+    z-index: 1;
 }
 
-header > :first-child{
-    margin-right: auto;
+.header:hover{
+    background-color: rgba(55, 192, 255, 1);
 }
 
-header > :nth-child(2), header > :nth-child(3){
-    margin-right: 5em;
+.navIcons{
+    margin-right: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+fa-icon{
+    font-size: var(--size-xl);
+}
+
+.navIcons a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    border-radius: 50%;
+    padding: 0.4rem;
+    transition: .5s;
+}
+
+.navIcons a::after{
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: inherit;
+    background: transparent;
+    z-index: -1;
+}
+
+/*
+.navIcons a::after{
+    content: '';
+    position: absolute;
+    top: 1.7rem;
+    right: 50%;
+    height: 0.2rem;
+    width: 0;
+    background-color: #07071d;
+    transition: .5s;
+}*/
+
+.navIcons a:hover::before{
+    border: 2px solid #07071d;
+}
+/*
+.navIcons a:hover::after{
+    width: 50%;
+}
+*/
+.navIcons a:hover{
+    color: #07071d;
 }
 
 .header__logo{
@@ -28,7 +85,7 @@ header > :nth-child(2), header > :nth-child(3){
 }
 
 .header__logo:hover{
-  color: var(--clr-light-blue);
+  color: #07071d;
 }
 
 .logo{
